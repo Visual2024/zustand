@@ -15,4 +15,7 @@ export interface BearsState {
   increaseBlackBears: (by: number) => void;
   increasePolarBears: (by: number) => void;
   increasePandaBears: (by: number) => void;
+
+  addbear: () => void;
+  allRemove: () => void;
 }

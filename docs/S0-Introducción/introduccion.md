@@ -106,7 +106,7 @@ const useAppStore = create<AppState>()((set, get) => ({
 
 ---
 
-  ### Stores Anidados (Pattern "Slices")
+### Stores Anidados (Pattern "Slices")
 
 Para organizar stores grandes y complejos, puedes dividirlos en "slices" (rebanadas). Cada slice es una parte del estado con su propia lógica y se combina para formar el store completo.
 
@@ -148,3 +148,7 @@ const useBoundStore = create<BearSlice & FishSlice>()((...a) => ({
 // const bears = useBoundStore(state => state.bears);
 // const addFish = useBoundStore(state => state.addFish);
 ```
+
+### Metodos con objeto anidado
+
+

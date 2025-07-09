@@ -3,7 +3,6 @@
 import { create } from "zustand";
 import { BearsState } from "../../types/ts_bears";
 
- 
 export const useBearsStore = create<BearsState>()((set) => ({
   blackBears: 10,
   polarBears: 5,
@@ -21,6 +20,8 @@ export const useBearsStore = create<BearsState>()((set) => ({
 
   doNothing: () => set((state)=>({bears: [...state.bears]})),
 
+  addbear: () => set((state) => ({ bears: [...state.bears, { id: state.bears.length + 1, name: `(Facundo ${state.bears.length + 1})` }] })),
+  allRemove: () => set({bears: [] }),
 }));
 
 

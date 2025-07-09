@@ -2,11 +2,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { WhiteCard } from '../../components';
 import { useBearsStore } from '../../store';
 
-
-
 export const BearPage = () => {
-
-
   return (
     <>
       <h1>Contador de Osos</h1>
@@ -45,8 +41,6 @@ export const BlackBears = () => {
 }
 
 export const PolarBears = () => {
-
-
   const polarBears = useBearsStore(state => state.polarBears);
   const increasePolarBears = useBearsStore(state => state.increasePolarBears);
   return (
@@ -87,15 +81,23 @@ export const PandaBears = () => {
 export const Bear = () => {
 
   const bears = useBearsStore(useShallow(state => state.bears));
-  // const doNothing = useBearsStore(state => state.doNothing);
   const doNothing = useBearsStore(state => state.doNothing);
+
+  const addBears = useBearsStore(state => state.addbear);
+  const removeBears = useBearsStore(state => state.allRemove);
+
 
   return (
 
     <WhiteCard>
       {/* Total de Osos */}
       <h1>Oso</h1>
-      <div className='flex flex-row'>
+      <div className='flex flex-col gap-y-4 '>
+        <button className='' onClick={doNothing}>do nothing</button>
+        <button className='' onClick={addBears}>Add Oso</button>
+        <button className='' onClick={removeBears}>Eliminar todo</button>
+      </div>
+      <div className='flex flex-col'>
         <span className="font-bold">
           {bears.map((item) => {
             return <div key={item.id} className='flex flex-row gap-10'>
@@ -104,7 +106,7 @@ export const Bear = () => {
             </div>
           })}
         </span>
-        <button onClick={doNothing}>do nothing</button>
+
       </div>
 
       <pre>
