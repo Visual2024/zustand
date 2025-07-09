@@ -85,16 +85,17 @@ export const Bear = () => {
 
   const addBears = useBearsStore(state => state.addbear);
   const removeBears = useBearsStore(state => state.allRemove);
-
+  const idRemove = useBearsStore(state => state.oneRemoveBears);
 
   return (
 
     <WhiteCard>
       {/* Total de Osos */}
       <h1>Oso</h1>
-      <div className='flex flex-col gap-y-4 '>
-        <button className='' onClick={doNothing}>do nothing</button>
+      <div className='grid grid-cols-2 grid-rows-2 gap-4'>
+        {/* <button className='' onClick={doNothing}>do nothing</button> */}
         <button className='' onClick={addBears}>Add Oso</button>
+        <button onClick={idRemove}>Eliminar un Oso</button>
         <button className='' onClick={removeBears}>Eliminar todo</button>
       </div>
       <div className='flex flex-col'>

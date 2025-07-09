@@ -10,6 +10,10 @@ export interface BearsState {
 
   bears: bears[];
 
+  computer: {
+    totalBears: number;
+  }
+
   doNothing: () => void;
 
   increaseBlackBears: (by: number) => void;
@@ -18,4 +22,5 @@ export interface BearsState {
 
   addbear: () => void;
   allRemove: () => void;
+  oneRemoveBears: () => void;
 }
